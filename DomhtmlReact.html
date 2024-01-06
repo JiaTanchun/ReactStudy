@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+</head>
+<body>
+    <button id="btn">我是按钮</button>
+    <div id="root">
+        <ul>
+            <li>aaaaa</li>
+        </ul>
+    </div>
+</body>
+<script>
+    const button = React.createElement("button", {  onClick:()=>{alert("你点我干嘛")}}, "我是React创建的button");
+    const div=React.createElement("div",{},button)
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(div);
+
+    const btn=document.getElementById("btn")
+    btn.addEventListener("click",()=>{
+        const button = React.createElement("button", {  onClick:()=>{alert("你点我干嘛")}}, "Click Me");
+        const div=React.createElement("div",{},"这是一个修改过的",button)
+        root.render(div)
+    })
+</script>
+</html>
